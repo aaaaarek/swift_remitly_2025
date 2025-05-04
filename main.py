@@ -12,7 +12,7 @@ engine = create_engine("sqlite:///swift_codes.db")
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 
-# pojedynczy SWIFT code (dla centrali lub oddziału)
+#pojedynczy SWIFT code (dla centrali lub oddziału)
 class SwiftCodeBranchResponse(BaseModel):
     address: str
     bankName: str
@@ -23,13 +23,13 @@ class SwiftCodeBranchResponse(BaseModel):
 class SwiftCodeResponse(SwiftCodeBranchResponse):
     countryName: Optional[str] = None
 
-# odpowiedź dla kraju
+#odpowiedź dla kraju
 class CountryResponse(BaseModel):
     countryISO2: str
     countryName: str
     swiftCodes: List[SwiftCodeBranchResponse]
 
-# struktura danych wejściowych dla POST
+#struktura danych wejściowych dla POST
 class SwiftCodeCreateRequest(BaseModel):
     address: str
     bankName: str

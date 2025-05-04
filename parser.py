@@ -17,7 +17,7 @@ def load_data(file_path: str, url = "sqlite:///swift_codes.db"):
         "TIME ZONE": "time_zone"
     })
 
-    #wystanaryzowanie country_iso2_code i country_name na duze litery + dodanie kolumny is_headquarter
+    #wystanaryzowanie country_iso2_code i country_name na duże litery + dodanie kolumny is_headquarter
     df["country_iso2_code"] = df["country_iso2_code"].str.upper()
     df["country_name"] = df["country_name"].str.upper()
     df["is_headquarter"] = df["swift_code"].str.endswith("XXX")
