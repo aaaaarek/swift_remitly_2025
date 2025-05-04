@@ -2,6 +2,7 @@
 
 A project written as an assignment for Remitly Internship 2025
 
+## Technologies Used
 
 - Python 3.11
 - FastAPI
@@ -11,17 +12,20 @@ A project written as an assignment for Remitly Internship 2025
 - Docker + Docker Compose
 - Pytest
 
-How to start it?
+## How to start it?
 
 - docker compose up --build
 
+## After that type in a browser
 
-How to run tests?
+- http://localhost:8080/docs
+
+## How to run tests?
 
 - pytest tests.py
 
 
-Endpoints
+## Endpoints
 
 - GET /v1/swift-codes/{swiftCode}
 - GET /v1/swift-codes/country/{countryISO2}
