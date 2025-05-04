@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Optional
 from collections import OrderedDict
 from models import SwiftCode, Base
@@ -38,8 +38,7 @@ class SwiftCodeCreateRequest(BaseModel):
     isHeadquarter: bool = Field(..., alias="isHeadquarter")
     swiftCode: str
 
-    class Config:
-        allow_population_by_field_name = True
+    model_config = ConfigDict(populate_by_name=True)
 
 @app.get("/v1/swift-codes/{swift_code}", response_model=None, response_class=JSONResponse)
 def get_swift_code(swift_code: str):
