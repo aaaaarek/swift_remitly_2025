@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, Boolean
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
@@ -13,5 +13,5 @@ class SwiftCode(Base):
     town_name = Column(String, nullable=False)
     country_name = Column(String, nullable=False)
     time_zone = Column(String, nullable=False)
-    is_headquarter = Column(Boolean, nullable=False) #to jest do wywnioskowania z kolumny swiftcode, ale wygodniej bedzie pisac zapytania, jesli bedzie tu ta kolumna
+    is_headquarter = Column(Boolean, nullable=False) #to jest do wywnioskowania z kolumny swiftcode, ale wygodniej będzie pisać zapytania, jećli będzie tu ta kolumna
 
